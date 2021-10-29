@@ -1,11 +1,11 @@
-﻿using IdentityServer4.Services;
+﻿using Duende.IdentityServer.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace IdentityServer4.Contrib.RedisStore.Tests.Cache
+namespace Duende.IdentityServer.Contrib.RedisStore.Tests.Cache
 {
     public class FakeCache<T> : ICache<T> where T : class
     {

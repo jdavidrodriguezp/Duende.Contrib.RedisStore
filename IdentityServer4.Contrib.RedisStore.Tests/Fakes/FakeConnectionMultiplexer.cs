@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace IdentityServer4.Contrib.RedisStore.Tests.Fakes
+namespace Duende.IdentityServer.Contrib.RedisStore.Tests.Fakes
 {
     internal class FakeConnectionMultiplexer : IConnectionMultiplexer
     {

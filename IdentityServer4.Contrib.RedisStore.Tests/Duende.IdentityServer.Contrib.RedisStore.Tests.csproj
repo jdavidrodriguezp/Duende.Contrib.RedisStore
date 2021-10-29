@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.10.*" />
-    <PackageReference Include="IdentityModel" Version="4.4.*" />
-    <PackageReference Include="IdentityServer4" Version="4.0.*" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.*" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
@@ -24,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IdentityServer4.Contrib.RedisStore\IdentityServer4.Contrib.RedisStore.csproj" />
+    <ProjectReference Include="..\IdentityServer4.Contrib.RedisStore\Duende.IdentityServer.Contrib.RedisStore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

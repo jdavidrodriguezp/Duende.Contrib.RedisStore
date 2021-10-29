@@ -1,16 +1,16 @@
-﻿using IdentityServer4.Extensions;
-using IdentityServer4.Models;
-using IdentityServer4.Stores;
+﻿using Duende.IdentityServer.Extensions;
+using Duende.IdentityServer.Models;
+using Duende.IdentityServer.Stores;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using System.Text.Json;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IdentityServer4.Contrib.RedisStore.Stores
+namespace Duende.IdentityServer.Contrib.RedisStore.Stores
 {
     /// <summary>
     /// Provides the implementation of IPersistedGrantStore for Redis Cache.
@@ -220,12 +220,12 @@ namespace IdentityServer4.Contrib.RedisStore.Stores
         #region Json
         protected static string ConvertToJson(PersistedGrant grant)
         {
-            return JsonConvert.SerializeObject(grant);
+            return JsonSerializer.Serialize(grant);
         }
 
         protected static PersistedGrant ConvertFromJson(string data)
         {
-            return JsonConvert.DeserializeObject<PersistedGrant>(data);
+            return JsonSerializer.Deserialize<PersistedGrant>(data);
         }
         #endregion
     }

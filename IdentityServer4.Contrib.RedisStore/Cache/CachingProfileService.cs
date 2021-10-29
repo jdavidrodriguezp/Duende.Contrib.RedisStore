@@ -1,15 +1,15 @@
 ﻿using System.Threading.Tasks;
-using IdentityServer4.Contrib.RedisStore;
-using IdentityServer4.Models;
+using Duende.IdentityServer.Contrib.RedisStore;
+using Duende.IdentityServer.Models;
 using Microsoft.Extensions.Logging;
-using IdentityServer4.Extensions;
+using Duende.IdentityServer.Extensions;
 
-namespace IdentityServer4.Services
+namespace Duende.IdentityServer.Services
 {
     /// <summary>
     /// Caching decorator for IProfileService
     /// </summary>
-    /// <seealso cref="IdentityServer4.Services.IProfileService" />
+    /// <seealso cref="Duende.IdentityServer.Services.IProfileService" />
     public class CachingProfileService<TProfileService> : IProfileService
     where TProfileService : class, IProfileService
     {

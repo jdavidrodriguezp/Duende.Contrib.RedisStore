@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Redis Store for operational data and for Caching of Duende Identity Server port to Identity Server 4 by Ali Bazzi</Description>
+    <Authors>David Rodriguez</Authors>
+    <Company>David Rodriguez</Company>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <PackageReleaseNotes>Supports Duende Identity Server  v1.</PackageReleaseNotes>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/jdrodriguezp/Duende.IdentityServer.Contrib.RedisStore</PackageProjectUrl>
+    <PackageIconUrl>https://identityserver.github.io/Documentation/assets/images/icons/IDserver_icon128.jpg</PackageIconUrl>
+    <PackageIcon>icon.jpg</PackageIcon>
+    <PackageTags>Redis Store Duende.IdentityServer</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>David Rodriguez</Copyright>
+    <FileVersion>1.0.0.0</FileVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Duende.IdentityServer" Version="5.2.3" />
+    <PackageReference Include="Duende.IdentityServer.Storage" Version="5.2.3" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp3.1\Duende.IdentityServer.Contrib.RedisStore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp3.1\Duende.IdentityServer.Contrib.RedisStore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Duende.IdentityServer.Contrib.RedisStore.nuspec" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.1.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.jpg" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
