@@ -1,14 +1,16 @@
-![Automated tests](https://github.com/AliBazzi/IdentityServer4.Contrib.RedisStore/workflows/Automated%20tests/badge.svg)
+![Automated tests](https://github.com/jdavidrodriguezp/Duende.IdentityServer.Contrib.RedisStore/workflows/Automated%20tests/badge.svg)
 
-# IdentityServer4.Contrib.RedisStore
+# Duende.IdentityServer.Contrib.RedisStore
 
-IdentityServer4.Contrib.RedisStore is a persistence layer using [Redis](https://redis.io) DB for operational data and for caching capability for Identity Server 4. Specifically, this store provides implementation for [IPersistedGrantStore](http://docs.identityserver.io/en/release/topics/deployment.html#operational-data) and [ICache<T>](http://docs.identityserver.io/en/release/topics/startup.html#caching).
+Duende.IdentityServer.Contrib.RedisStore is a library based on IdentityServer4.Contrib.RedisStore by [AliBazzi](https://github.com/AliBazzi/IdentityServer4.Contrib.RedisStore) to provide compatibility wiht Duende.IdentityServer this persistence layer using [Redis](https://redis.io) DB for operational data and for caching capability for Identity Server 4. Specifically, this store provides implementation for [IPersistedGrantStore](http://docs.identityserver.io/en/release/topics/deployment.html#operational-data) and [ICache<T>](http://docs.identityserver.io/en/release/topics/startup.html#caching).
 
 ## How to use
 
-You need to install the [nuget package](https://www.nuget.org/packages/IdentityServer4.Contrib.RedisStore)
+This a copy for original documentation of [IdentityServer4.Contrib.RedisStore](https://github.com/AliBazzi/IdentityServer4.Contrib.RedisStore) for more informaion please visit the Git of creator [AliBazzi](https://github.com/AliBazzi/IdentityServer4.Contrib.RedisStore) 
 
-then you can inject the operational store in the Identity Server 4 Configuration at startup using one of the overloads of `AddOperationalStore`:
+You need to install the [nuget package](https://www.nuget.org/packages/Duende.IdentityServer.Contrib.RedisStore)
+
+then you can inject the operational store in the Duende Identity Server Configuration at startup using one of the overloads of `AddOperationalStore`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
