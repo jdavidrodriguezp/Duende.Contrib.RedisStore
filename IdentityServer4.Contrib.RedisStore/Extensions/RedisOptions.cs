@@ -1,7 +1,7 @@
 ﻿using System;
 using StackExchange.Redis;
 
-namespace IdentityServer4.Contrib.RedisStore
+namespace Duende.IdentityServer.Contrib.RedisStore
 {
     /// <summary>
     /// Represents Redis general options.

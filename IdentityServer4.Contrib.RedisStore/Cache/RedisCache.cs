@@ -1,12 +1,12 @@
-﻿using IdentityServer4.Services;
-using IdentityServer4.Stores.Serialization;
+﻿using Duende.IdentityServer.Services;
+using Duende.IdentityServer.Stores.Serialization;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using StackExchange.Redis;
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace IdentityServer4.Contrib.RedisStore.Cache
+namespace Duende.IdentityServer.Contrib.RedisStore.Cache
 {
     /// <summary>
     /// Redis based implementation for ICache<typeparamref name="T"/>
@@ -56,11 +56,11 @@ namespace IdentityServer4.Contrib.RedisStore.Cache
         }
 
         #region Json
-        private JsonSerializerSettings SerializerSettings
+        private JsonSerializerOptions SerializerSettings
         {
             get
             {
-                var settings = new JsonSerializerSettings();
+                var settings = new JsonSerializerOptions();
                 settings.Converters.Add(new ClaimConverter());
                 return settings;
             }
@@ -68,12 +68,12 @@ namespace IdentityServer4.Contrib.RedisStore.Cache
 
         private T Deserialize(string json)
         {
-            return JsonConvert.DeserializeObject<T>(json, this.SerializerSettings);
+            return System.Text.Json.JsonSerializer.Deserialize<T>(json, this.SerializerSettings);
         }
 
         private string Serialize(T item)
         {
-            return JsonConvert.SerializeObject(item, this.SerializerSettings);
+            return System.Text.Json.JsonSerializer.Serialize(item, this.SerializerSettings);
         }
         #endregion
     }
