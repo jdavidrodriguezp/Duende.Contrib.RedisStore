@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - name: Setup Redis
         uses: zhulik/redis-action@1.1.0
       - name: Setup .NET Core
